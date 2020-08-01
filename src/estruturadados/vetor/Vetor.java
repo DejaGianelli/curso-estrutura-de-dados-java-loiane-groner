@@ -20,6 +20,25 @@ public class Vetor {
         }
     }
 
+    public boolean remove(int posicao){
+        if(!(posicao >= 0 && posicao < tamanho)) {
+            throw new IllegalArgumentException("Posição inválida");
+        }
+        for(int i=posicao+1; i <= tamanho-1; i++){
+            elementos[i-1] = elementos[i];
+            if(i == tamanho-1){
+                elementos[i] = null;
+            }
+        }
+        tamanho--;
+        return true;
+    }
+
+    public boolean remove(String elemento){
+        int posicao = buscar(elemento);
+        return remove(posicao);
+    }
+
     public boolean adiciona(String elemento) throws Exception {
         aumentaCapacidade();
         if(tamanho < elementos.length) {
