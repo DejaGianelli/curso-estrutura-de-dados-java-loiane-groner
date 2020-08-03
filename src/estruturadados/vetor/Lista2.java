@@ -18,7 +18,7 @@ public class Lista2<T> extends EstruturaEstatica<T> {
     }
 
     @Override
-    public boolean adiciona(T elemento) throws Exception {
+    public boolean adiciona(T elemento){
         return super.adiciona(elemento);
     }
 }

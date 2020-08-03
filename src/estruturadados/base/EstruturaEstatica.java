@@ -1,11 +1,9 @@
 package estruturadados.base;
 
-import java.lang.reflect.Array;
-
 public class EstruturaEstatica<T> {
 
-    private T[] elementos;
-    private int tamanho;
+    protected T[] elementos;
+    protected int tamanho;
 
     public EstruturaEstatica(int capacidade) {
         this.elementos = (T[]) new Object[capacidade];
@@ -16,7 +14,7 @@ public class EstruturaEstatica<T> {
         this(10);
     }
 
-    private void aumentaCapacidade(){
+    protected void aumentaCapacidade(){
         if(tamanho == elementos.length){
             T[] elementosNovos = (T[]) new Object[tamanho*2];
             for(int i=0; i<tamanho; i++){
@@ -27,9 +25,6 @@ public class EstruturaEstatica<T> {
     }
 
     protected boolean adiciona(T elemento, int posicao){
-        if(!(posicao >= 0 && posicao < tamanho)) {
-            throw new IllegalArgumentException("Posição inválida");
-        }
         aumentaCapacidade();
         for(int i=tamanho-1; i >= posicao; i--){
             elementos[i+1] = elementos[i];
@@ -39,7 +34,7 @@ public class EstruturaEstatica<T> {
         return true;
     }
 
-    protected boolean adiciona(T elemento) throws Exception {
+    protected boolean adiciona(T elemento){
         aumentaCapacidade();
         if(tamanho < elementos.length) {
             this.elementos[this.tamanho] = elemento;
