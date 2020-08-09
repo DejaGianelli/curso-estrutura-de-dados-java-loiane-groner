@@ -62,4 +62,8 @@ public class EstruturaEstatica<T> {
         s.append("]");
         return s.toString();
     }
+
+    public boolean estaVazia(){
+        return tamanho == 0;
+    }
 }
