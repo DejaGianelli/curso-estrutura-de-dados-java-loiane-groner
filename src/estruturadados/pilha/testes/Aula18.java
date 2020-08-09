@@ -13,7 +13,7 @@ public class Aula18 {
         System.out.println(stack.size()); //2
         System.out.println(stack.peek()); //2
         System.out.println(stack.pop());
-        System.out.println(stack.toString()); 
+        System.out.println(stack.toString());
 
 
     }
